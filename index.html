@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
+    <!-- Import Bulma CSS file here -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Personalised CSS file here -->
+    <link rel="stylesheet" href="app.css">
+
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Task Manager</h1>
+    </header>
+
+    <main>
+        <!-- Task List Display -->
+        <section id="task-list">
+            <!-- Task List Default-->
+            <div class="task-list">
+                <ul>
+                    <li>Task 1</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Task List Display End -->
+
+        <!-- Task Form -->
+        <section id="task-form">
+            <!-- Add Tasks -->
+            <form class="box" id="add-task-form">
+                <h2 class="subtitle">Add Task</h2>
+                <!-- Task Title -->
+                <div class="field">
+                    <label for="task-title">Title:</label>
+                    <div class="control">
+                        <input type="text" id="task-title" name="task-title" placeholder="Task title" required>
+                    </div>
+                </div>
+                <!-- Task Description -->
+                <div class="field">
+                    <label for="task-description">Description:</label>
+                    <div class="control">
+                        <textarea type="text" id="task-description" name="task-description"></textarea>
+                    </div>
+                </div>
+                <!-- Due Date -->
+                <div class="field">
+                    <label for="due-date">Due to:</label>
+                    <div class="control">
+                        <input type="date" id="due-date" name="due-date">
+                    </div>
+                </div>
+                <!-- Submit button -->
+                <button class="button" type="submit">Add</button>
+                <!-- Reset button -->
+                <button class="button" type="submit">Reset</button>
+            </form>
+        </section>
+    </main>
+    <!-- Personalised JavaScript file here -->
+    <script src="app.js"></script>
+</body>
+</html>
