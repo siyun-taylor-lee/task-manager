@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
 
     <!-- Import Bootstrap CSS file here -->
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- Import personailsed CSS file here -->
     <link rel="stylesheet" href="app.css">
 
@@ -23,40 +23,66 @@
     </header>
 
     <main>
+        <nav class="navbar bg-warning-subtle">
+            <nav class="nav container" id="navTab" role="tablist">
+                <a href="/public/index.html" class="nav-link active text-bg-primary" id="homeTab" onclick="moveTab()">Home</a>
+                <a href="/public/index.html`" class="nav-link" id="listTab" onclick="moveTab()">Task List</a>    
+                <a href="/public/index.html" class="nav-link" id="completeTab" onclick="moveTab()">Complete</a>
+                <a href="/public/index.html" class="nav-link" id="incompleteTab" onclick="moveTab()">Incomplete</a>
+            </nav>
+        </nav>
         <!-- Task List Display -->
         <section class="container" id="taskList">
-            <h3>Task List</h3>
-            <!-- Task List -->
-            <div class="list-group">
-                <div class="task" id="task1">
-                    <div class="taks-title">Task 1: </div>
-                    <div class="status status-complete" onclick="toggleStatus('task1')">Complete</div>
+                <div class="container">
+                <h3>Task List</h3>
+                <!-- Task List -->
+                <ul class="list-group">
+                    <li class="list-group-item" id="task1">
+                        <div class="task-title">Task 1 </div>
+                        <div class="task-description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate culpa recusandae perspiciatis cum illum et eius sapiente velit, numquam ipsa dolores tenetur mollitia expedita quos pariatur eligendi enim at vel.</div>
+                        <div class="status status-complete">
+                            <button class="btn btn-primary btn-sm text-bg-success" onclick="toggleStatus('task1')">Complete</button>
+                            <button class="btn btn-primary btn-sm text-bg-info" onclick="editTask('task1')">Edit</button>
+                            <button class="btn btn-primary btn-sm text-bg-danger" onclick="deleteTask('task1')">Delete</button>
+                        </div>
+                    </li>
+                    <li class="list-group-item" id="task2">
+                        <div class="task-title">Task 2</div>
+                        <div class="task-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint alias nam et aut, accusantium perferendis praesentium, explicabo repellendus ex placeat amet impedit! Dolorem magnam corrupti praesentium sequi animi quidem earum?</div>
+                        <div class="status status-incomplete">
+                            <button class="btn btn-primary btn-sm text-bg-secondary" onclick="toggleStatus('task2')">Incomplete</button>
+                            <button class="btn btn-primary btn-sm text-bg-info" onclick="editTask('task2')">Edit</button>
+                            <button class="btn btn-primary btn-sm text-bg-danger" onclick="deleteTask('task2')">Delete</button>
+                        </div>
+                    </li>
                 </div>
-                <div class="task" id="task2">
-                    <div class="task-title">Task 2:</div>
-                    <div class="status status-incomplete" onclick="toggleStatus('task2')">Incomplete</div>
-                </div>
-              </div>
+            </div>
         </section>
         <!-- Task List Display End -->
         
         <section class="container add-task">
             <h3>Add Task</h3>
             <div id="addTaskSection">
-                <input type="text" id="newTaskTitle" placeholder="Add the task title">
-                <button id="addTaskBtn" onclick="addTask()">Add Task
-                <a href="#"></a></button>
+                <p>
+                    <input type="text" id="newTaskTitle" placeholder="Add the task title">
+                </p>
+                <p>
+                    <input type="text" id="newTaskDescription" placeholder="Add the task description">
+                </p>
+                <p>
+                    <button class="btn btn-primary btn-sm" id="addTaskBtn" onclick="addTask()">Add Task</button>
+                </p>
             </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="container-fluid">
         <p>Contact me @ siyun.taylor.lee@gmail.com</p>
     </footer>
 
     <!-- Bootstrap JS bundle file here -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
     <!-- Personalised JavaScript file here -->
     <script src="script.js"></script>
